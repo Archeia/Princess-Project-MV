@@ -1,5 +1,5 @@
 /*:
- * @plugindesc v1.20 Plugin supports Tiled Map Editor maps with some additional
+ * @plugindesc v1.30 Plugin supports Tiled Map Editor maps with some additional
  * features.
  * @author Dr.Yami
  *
