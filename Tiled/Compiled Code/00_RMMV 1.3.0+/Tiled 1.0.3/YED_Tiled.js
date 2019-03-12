@@ -68,6 +68,10 @@
  *   toLevel
  *   The tiles on this layer will transfer player to another level.
  */
+
+var Imported = Imported || {};
+Imported.YED_Tiled = true;
+
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
