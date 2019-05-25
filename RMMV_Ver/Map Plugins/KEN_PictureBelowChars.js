@@ -1,7 +1,3 @@
-//=============================================================================
-// Kentou Picture Below Characters
-// Version: 1.00
-//=============================================================================
 /*:
  * @plugindesc v1.00 Plugin to display a picture with a specific ID below characters
  * but above tilemap. (Even if used with YED_Tiled plugin).
@@ -25,9 +21,12 @@
 var _createPictures = Spriteset_Base.prototype.createPictures;
 Spriteset_Base.prototype.createPictures = function() {
     _createPictures.call(this);
-    var params = PluginManager.parameters("KEN_PictureBelowChars");
-    var picID = parseInt(params["Picture ID"]);    
-    var sprite = this._pictureContainer.removeChildAt(picID - 1);
-    sprite.z = sprite.zIndex = parseInt(params["Picture Z"]);
-    this._tilemap.addChild(sprite);
+
+    if (this._tilemap) {
+        var params = PluginManager.parameters("KEN_PictureBelowChars");
+        var picID = parseInt(params["Picture ID"]);    
+        var sprite = this._pictureContainer.removeChildAt(picID - 1);
+        sprite.z = sprite.zIndex = parseInt(params["Picture Z"]);
+        this._tilemap.addChild(sprite);
+    }
 };
