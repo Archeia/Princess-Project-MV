@@ -48,7 +48,7 @@ Game_Map.prototype.flagsLayer = function() {
         var layers = this.tiledData.layers;
         
         for(var i = 0; i < layers.length; i++) {
-            if (layers[i].properties.flags) {
+            if (layers[i].properties && layers[i].properties.flags) {
                 this._flagsLayer = layers[i]; break;
             }
         }
@@ -62,16 +62,17 @@ Game_Map.prototype.flagsLayer = function() {
 //=============================================================================
 Game_Map.prototype.checkTileFlag = function(x, y, flag) {	
 	var flags = this.flagsLayer();
+	if (!flags) return false;
 	var tileId = flags.data[y * $dataMap.width + x];
     var tileset = this.flagsTileset();
 	var props = tileset.tileproperties[tileId - tileset.firstgid];
 	
 	if (props) {
 		switch (flag) {
-			case 0: return tileset.tileproperties[tileId - tileset.firstgid].counter;
-			case 1: return tileset.tileproperties[tileId - tileset.firstgid].bush;
-			case 2: return tileset.tileproperties[tileId - tileset.firstgid].ladder;
-			case 3: return tileset.tileproperties[tileId - tileset.firstgid].damage;
+			case 0: return tileset.tileproperties[tileId - tileset.firstgid] && tileset.tileproperties[tileId - tileset.firstgid].counter;
+			case 1: return tileset.tileproperties[tileId - tileset.firstgid] && tileset.tileproperties[tileId - tileset.firstgid].bush;
+			case 2: return tileset.tileproperties[tileId - tileset.firstgid] && tileset.tileproperties[tileId - tileset.firstgid].ladder;
+			case 3: return tileset.tileproperties[tileId - tileset.firstgid] && tileset.tileproperties[tileId - tileset.firstgid].damage;
 		}	
 	}
 	else
