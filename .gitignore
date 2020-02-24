@@ -1,0 +1,4 @@
+node_modules
+
+# Build folder added, since static versions should have a different filename
+Tiled/Compiled\ Code/build

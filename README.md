@@ -12,9 +12,9 @@ Games released so far:
 ### How to build
 
 1. Install node.js (should include npm too)
+2. Make sure you're inside the `Tiled` folder
 2. npm install
-3. npm install webpack -g
-4. Run `webpack`
+4. Run `npm run build`
 
 ### How to dev
 This use babel with webpack, can use along with VSCode for best develop experience.

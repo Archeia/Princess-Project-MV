@@ -1,0 +1,19 @@
+{
+  "name": "yami-engine-delta",
+  "description": "RPG Maker MV plugins compilation",
+  "main": "Source Code/index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/runtime": "^7.6.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
